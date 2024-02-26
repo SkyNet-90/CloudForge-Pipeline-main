@@ -59,6 +59,12 @@ The project is structured as follows to support multiple environments and modula
 - `terraform/modules`: Reusable Terraform modules for different Azure resources.
 - `src`: Placeholder for application source code that will be deployed to Azure.
 
+## Terraform Configuration
+Ensure your Terraform configurations are set up correctly:
+
+1. Backend Setup: Follow the instructions in the terraform directory to configure the Azure Blob Storage as the backend for Terraform state files.
+2. Modules Configuration: Utilize the modules in the terraform/modules directory to create reusable components for Azure resources.
+
 ## Getting Started
 
 To begin using this pipeline for deployment:
