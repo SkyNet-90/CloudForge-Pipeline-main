@@ -43,8 +43,9 @@ az account set --subscription "Your Subscription Name/ID"
 The project is structured as follows to support multiple environments and modular infrastructure development:
 
 /
-├── .github/workflows # CI/CD pipeline definitions for GitHub Actions
-├── terraform/ # Terraform configurations
+├── .github/
+│ └── workflows/ # CI/CD pipeline definitions for GitHub Actions
+├── terraform/
 │ ├── dev/ # Development environment configs
 │ ├── test/ # Testing environment configs
 │ ├── prod/ # Production environment configs
