@@ -60,32 +60,41 @@ The project is structured as follows to support multiple environments and modula
 - `src`: Placeholder for application source code that will be deployed to Azure.
 
 ## Terraform Configuration
+
 Ensure your Terraform configurations are set up correctly:
 
-1. Backend Setup: Follow the instructions in the terraform directory to configure the Azure Blob Storage as the backend for Terraform state files.
-2. Modules Configuration: Utilize the modules in the terraform/modules directory to create reusable components for Azure resources.
+1. **Backend Setup**: Follow the instructions in the terraform directory to configure the Azure Blob Storage as the backend for Terraform state files.
+2. **Modules Configuration**: Utilize the modules in the terraform/modules directory to create reusable components for Azure resources.
 
-## Getting Started
+## CI/CD Pipeline Setup
 
-To begin using this pipeline for deployment:
+This project uses GitHub Actions for CI/CD. Workflow files are located in `.github/workflows` and are set up for different environments (dev, test, prod). Ensure to review and adapt these workflows to match your project requirements.
 
-1. **Configure Terraform**: Navigate to the `terraform` directory of your target environment (e.g., `dev`) and initialize Terraform:
+## Deployment Process
 
-cd terraform/dev
-terraform init
+1. **Development**: Push changes to the development branch to trigger deployments to the dev environment. Ideal for rapid testing and iterations.
+2. **Testing**: Merge changes into the testing branch to deploy to the testing environment. Use this for more comprehensive tests and validations.
+3. **Production**: Tag a release to trigger deployment to the production environment. This environment should be stable and is customer-facing.
+
+## Building and Running the Python Application
+
+### Building the Docker Container
+
+Navigate to the `src` directory and build the Docker container for the Python application:
+
+cd src
+docker build -t cloudforge-pipeline-app
 
 
-2. **Plan and Apply**: Review the execution plan and apply to provision resources:
+### Running the Docker Container
 
-terraform plan
-terraform apply
+Run the Docker container, mapping the container's port 5000 to port 5000 on the host:
 
+docker run -p 5000:5000 cloudforge-pipeline-app
 
-3. **CI/CD Pipelines**: Review and customize the CI/CD pipeline definitions in `.github/workflows` as needed to fit your project's deployment strategy.
+Access the application in your web browser at `http://localhost:5000`.
+
 
 ## Contributing
 
-Contributions to the CloudForge-Pipeline project are welcome! Please ensure you follow our contribution guidelines for submitting pull requests or reporting issues.
-
-
-
+Contributions to the CloudForge-Pipeline project are welcome!
