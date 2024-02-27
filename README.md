@@ -42,23 +42,6 @@ az account set --subscription "Your Subscription Name/ID"
 
 The project is structured as follows to support multiple environments and modular infrastructure development:
 
-
-/
-└───CloudForge-Pipeline-main
-    ├───.github
-    │   └───workflows
-    ├───.terraform
-    ├───src
-    └───terraform
-        ├───dev
-        ├───modules
-        │   ├───azure-aks
-        │   ├───azure-app-service
-        │   ├───azure-sql
-        │   ├───azure-storage-account
-        │   └───azure-vnet
-        ├───prod
-        └───test
 /
 ├── .github/
 │ └── workflows/ # CI/CD pipeline definitions for GitHub Actions
