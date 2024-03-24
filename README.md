@@ -18,7 +18,7 @@ CloudForge-Pipeline is an automated multi-environment deployment pipeline design
 
 Start by cloning this repository to your local machine:
 
-git clone https://github.com/yourusername/CloudForge-Pipeline.git
+git clone https://github.com/SkyNet-90/CloudForge-Pipeline.git
 cd CloudForge-Pipeline
 
 
